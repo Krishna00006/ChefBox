@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Menu - ChefBOX</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h2 class="logo-text">Chef<span>Box</span></h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Menu</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="cart" onclick="toggleCart()">
+      🛒 Cart <span id="cartCount" class="cart-count">0</span>
+    </div>
+  </header>
+
+  <!-- MAIN MENU SECTION -->
+  <section class="services-hero">
+  <h1>Our Menu</h1>
+  <p>Fresh, pre-portioned ingredients for every diet — filtered just for you.</p>
+  </section>
+
+  <section class="page menu-page">
+    <!-- FILTER BUTTONS -->
+    <div class="filter-pills">
+      <button class="pill pill-active" data-filter="all">All Meals</button>
+      <button class="pill" data-filter="vegan">🌱 Vegan</button>
+      <button class="pill" data-filter="keto">🥑 Keto</button>
+      <button class="pill" data-filter="high-protein">💪 High-Protein</button>
+      <button class="pill" data-filter="gluten-free">🌾 Gluten-Free</button>
+    </div>
+
+    <!-- MEAL CARDS GRID -->
+    <div class="menu-grid" id="menuGrid">
+
+      <!-- CARD 1 -->
+      <div class="meal-card" data-categories="vegan gluten-free">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80" alt="Green Goddess Grain Bowl" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-vegan">Vegan</span>
+            <span class="tag tag-gluten-free">Gluten-Free</span>
+          </div>
+          <span class="card-cal">420 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Green Goddess Grain Bowl</h3>
+          <p>Farro, roasted chickpeas, avocado, cucumber ribbons and tahini-lemon dressing.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹899 <small>/ serving</small></span>
+          <button onclick="addToCart('Green Goddess Grain Bowl')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="meal-card" data-categories="keto gluten-free high-protein">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=500&q=80" alt="Smoked Salmon Keto Plate" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-keto">Keto</span>
+            <span class="tag tag-high-protein">High-Protein</span>
+          </div>
+          <span class="card-cal">510 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Smoked Salmon Keto Plate</h3>
+          <p>Wild-caught salmon, cream cheese, capers and cucumber with everything seasoning.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹1,099 <small>/ serving</small></span>
+          <button onclick="addToCart('Smoked Salmon Keto Plate')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="meal-card" data-categories="high-protein gluten-free">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=80" alt="Chicken Quinoa Power Bowl" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-high-protein">High-Protein</span>
+            <span class="tag tag-gluten-free">Gluten-Free</span>
+          </div>
+          <span class="card-cal">580 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Chicken &amp; Quinoa Power Bowl</h3>
+          <p>Grilled chicken breast, tri-color quinoa, roasted sweet potato and chimichurri.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹949 <small>/ serving</small></span>
+          <button onclick="addToCart('Chicken & Quinoa Power Bowl')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="meal-card" data-categories="vegan gluten-free">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&q=80" alt="Cauliflower Tikka Masala" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-vegan">Vegan</span>
+            <span class="tag tag-gluten-free">Gluten-Free</span>
+          </div>
+          <span class="card-cal">390 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Cauliflower Tikka Masala</h3>
+          <p>Cauliflower florets in a rich tomato-coconut masala, served with basmati rice.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹799 <small>/ serving</small></span>
+          <button onclick="addToCart('Cauliflower Tikka Masala')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="meal-card" data-categories="keto high-protein gluten-free">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=500&q=80" alt="Beef Broccoli Stir Fry" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-keto">Keto</span>
+            <span class="tag tag-high-protein">High-Protein</span>
+          </div>
+          <span class="card-cal">620 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Beef &amp; Broccoli Stir Fry</h3>
+          <p>Grass-fed flank steak, tender-crisp broccoli, sesame-ginger sauce over cauliflower rice.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹1,149 <small>/ serving</small></span>
+          <button onclick="addToCart('Beef & Broccoli Stir Fry')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="meal-card" data-categories="vegan">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500&q=80" alt="Falafel Wrap" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-vegan">Vegan</span>
+          </div>
+          <span class="card-cal">480 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Mediterranean Falafel Wrap</h3>
+          <p>Crispy chickpea falafel, hummus, pickled red onion, fresh herbs in warm flatbread.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹749 <small>/ serving</small></span>
+          <button onclick="addToCart('Mediterranean Falafel Wrap')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="meal-card" data-categories="keto high-protein gluten-free">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=500&q=80" alt="Turkey Taco Lettuce Cups" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-keto">Keto</span>
+            <span class="tag tag-high-protein">High-Protein</span>
+            <span class="tag tag-gluten-free">Gluten-Free</span>
+          </div>
+          <span class="card-cal">360 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Turkey Taco Lettuce Cups</h3>
+          <p>Spiced ground turkey, pico de gallo, cotija cheese and avocado in butter lettuce.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹849 <small>/ serving</small></span>
+          <button onclick="addToCart('Turkey Taco Lettuce Cups')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="meal-card" data-categories="vegan gluten-free high-protein">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80" alt="Lentil Soup" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-vegan">Vegan</span>
+            <span class="tag tag-high-protein">High-Protein</span>
+            <span class="tag tag-gluten-free">Gluten-Free</span>
+          </div>
+          <span class="card-cal">340 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Lentil &amp; Roasted Veggie Soup</h3>
+          <p>Red lentils, roasted carrots, smoked paprika and lemon — hearty and warming.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹699 <small>/ serving</small></span>
+          <button onclick="addToCart('Lentil & Roasted Veggie Soup')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 9 -->
+      <div class="meal-card" data-categories="keto high-protein gluten-free">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=500&q=80" alt="Egg White Frittata" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-keto">Keto</span>
+            <span class="tag tag-high-protein">High-Protein</span>
+            <span class="tag tag-gluten-free">Gluten-Free</span>
+          </div>
+          <span class="card-cal">290 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Egg White Frittata</h3>
+          <p>Fluffy egg whites, roasted peppers, spinach, goat cheese and fresh thyme.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹729 <small>/ serving</small></span>
+          <button onclick="addToCart('Egg White Frittata')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 10 -->
+      <div class="meal-card" data-categories="vegan gluten-free">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=500&q=80" alt="Mango Chickpea Curry" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-vegan">Vegan</span>
+            <span class="tag tag-gluten-free">Gluten-Free</span>
+          </div>
+          <span class="card-cal">430 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Mango Chickpea Coconut Curry</h3>
+          <p>Sweet mango, creamy coconut milk, curry leaves and tender chickpeas with jasmine rice.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹779 <small>/ serving</small></span>
+          <button onclick="addToCart('Mango Chickpea Coconut Curry')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 11 -->
+      <div class="meal-card" data-categories="keto high-protein gluten-free">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=500&q=80" alt="Zucchini Noodle Bolognese" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-keto">Keto</span>
+            <span class="tag tag-high-protein">High-Protein</span>
+            <span class="tag tag-gluten-free">Gluten-Free</span>
+          </div>
+          <span class="card-cal">440 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Zucchini Noodle Bolognese</h3>
+          <p>Spiral-cut zucchini with slow-simmered beef ragu, fresh basil and parmesan.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹999 <small>/ serving</small></span>
+          <button onclick="addToCart('Zucchini Noodle Bolognese')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CARD 12 -->
+      <div class="meal-card" data-categories="vegan gluten-free">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?w=500&q=80" alt="Açaí Bowl" loading="lazy" />
+          <div class="card-tags">
+            <span class="tag tag-vegan">Vegan</span>
+            <span class="tag tag-gluten-free">Gluten-Free</span>
+          </div>
+          <span class="card-cal">380 kcal</span>
+        </div>
+        <div class="card-body">
+          <h3>Açaí Breakfast Bowl</h3>
+          <p>Blended açaí, banana, almond milk, topped with granola, fresh berries and honey.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-price">₹649 <small>/ serving</small></span>
+          <button onclick="addToCart('Açaí Breakfast Bowl')">Add to Cart</button>
+        </div>
+      </div>
+
+    </div><!-- end .menu-grid -->
+
+  </section>
+
+  <!-- CART PANEL -->
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart" onclick="toggleCart()">✖</button>
+    </div>
+    <ul id="cartItems"></ul>
+    <div class="cart-footer">
+      <button onclick="clearCart()" class="clear-cart">Clear Cart</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3 class="logo">ChefBOX</h3>
+        <p>Delivering fresh ingredients weekly for your culinary adventures.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="products.html">Menu</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Diet Plans</h4>
+        <a href="#">Vegan</a>
+        <a href="#">Keto</a>
+        <a href="#">High-Protein</a>
+        <a href="#">Gluten-Free</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: hello@chefbox.com</p>
+        <p>Location: Mumbai, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ChefBOX | Fresh • Healthy • Delivered</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

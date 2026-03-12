@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Services - ChefBOX</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h2 class="logo-text">Chef<span>Box</span></h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Menu</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="cart" onclick="toggleCart()">
+      🛒 Cart <span id="cartCount" class="cart-count">0</span>
+    </div>
+  </header>
+
+  <!-- SERVICES HERO -->
+  <section class="services-hero">
+    <h1>Our Plans</h1>
+    <p>Choose a delivery plan that fits your lifestyle. Fresh ingredients, zero waste, delivered to your door.</p>
+  </section>
+
+  <!-- PRICING PLANS -->
+  <section class="page">
+
+    <h1>Pick Your Plan</h1>
+    <p>All plans include pre-portioned ingredients, step-by-step recipe cards and free delivery.</p>
+
+    <div class="plans-grid">
+
+      <!-- WEEKLY -->
+      <div class="plan-card">
+        <div class="plan-header plan-weekly">
+          <span class="plan-badge">Flexible</span>
+          <h2>Weekly</h2>
+          <div class="plan-price">₹1,299 <span>/ week</span></div>
+          <p style="color: white;">3 meals · 2 servings each</p>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> 3 meals per week</li>
+          <li><i class="fas fa-check"></i> 2 servings per meal</li>
+          <li><i class="fas fa-check"></i> Choose your diet type</li>
+          <li><i class="fas fa-check"></i> Free delivery</li>
+          <li><i class="fas fa-check"></i> Skip or cancel anytime</li>
+          <li><i class="fas fa-check"></i> Recipe cards included</li>
+          <li class="plan-feature-off"><i class="fas fa-times"></i> Priority customer support</li>
+          <li class="plan-feature-off"><i class="fas fa-times"></i> Exclusive seasonal meals</li>
+        </ul>
+        <a href="contact.html" class="plan-btn plan-btn-outline">Get Started</a>
+      </div>
+
+      <!-- MONTHLY (featured) -->
+      <div class="plan-card plan-card-featured">
+        <div class="plan-header plan-monthly">
+          <span class="plan-badge">Most Popular</span>
+          <h2>Monthly</h2>
+          <div class="plan-price">₹3,999 <span>/ month</span></div>
+          <p style="color: white;">12 meals · 2 servings each</p>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> 3 meals per week</li>
+          <li><i class="fas fa-check"></i> 2 servings per meal</li>
+          <li><i class="fas fa-check"></i> Choose your diet type</li>
+          <li><i class="fas fa-check"></i> Free delivery</li>
+          <li><i class="fas fa-check"></i> Skip or pause anytime</li>
+          <li><i class="fas fa-check"></i> Recipe cards included</li>
+          <li><i class="fas fa-check"></i> Priority customer support</li>
+          <li class="plan-feature-off"><i class="fas fa-times"></i> Exclusive seasonal meals</li>
+        </ul>
+        <a href="contact.html" class="plan-btn plan-btn-solid">Get Started</a>
+      </div>
+
+      <!-- ANNUAL -->
+      <div class="plan-card">
+        <div class="plan-header plan-annual">
+          <span class="plan-badge">Best Value</span>
+          <h2>Annual</h2>
+          <div class="plan-price">₹39,999 <span>/ year</span></div>
+          <p style="color: white;">Save ₹5,600 vs monthly</p>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i> 3 meals per week</li>
+          <li><i class="fas fa-check"></i> 2 servings per meal</li>
+          <li><i class="fas fa-check"></i> Choose your diet type</li>
+          <li><i class="fas fa-check"></i> Free delivery</li>
+          <li><i class="fas fa-check"></i> Skip or pause anytime</li>
+          <li><i class="fas fa-check"></i> Recipe cards included</li>
+          <li><i class="fas fa-check"></i> Priority customer support</li>
+          <li><i class="fas fa-check"></i> Exclusive seasonal meals</li>
+        </ul>
+        <a href="contact.html" class="plan-btn plan-btn-outline">Get Started</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HOW IT WORKS — EXPANDABLE CARDS -->
+  <section class="page">
+
+    <h1>How It Works</h1>
+    <p>Everything you need to know about ChefBox — from delivery to diets to cancellations.</p>
+
+    <div class="card-container">
+
+      <!-- CARD 1 — Delivery -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&q=80" alt="Delivery"/>
+        <h3>Delivery & Packaging</h3><br>
+        <p>Fresh to your door, every week.</p>
+        <button onclick="toggleDetails('delivery')">Know More</button>
+        <div id="delivery" class="details">
+          <h4>How Delivery Works</h4>
+          <p>Your ChefBox is packed fresh and delivered to your doorstep every Monday morning. All ingredients are vacuum-sealed and packed in insulated boxes to stay fresh for up to 5 days.</p>
+          <h4>Delivery Coverage</h4>
+          <ul>
+            <li>Mumbai, Delhi, Bangalore</li>
+            <li>Pune, Hyderabad, Chennai</li>
+            <li>More cities coming soon</li>
+          </ul>
+          <h4>Packaging</h4>
+          <ul>
+            <li>100% recyclable materials</li>
+            <li>Insulated ice-pack liners</li>
+            <li>Clearly labelled meal bags</li>
+            <li>Zero single-use plastic</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CARD 2 — Diet Plans -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80" alt="Diet Plans"/>
+        <h3>Diet Plans</h3><br>
+        <p>Meals tailored to your goals.</p>
+        <button onclick="toggleDetails('diets')">Know More</button>
+        <div id="diets" class="details">
+          <h4>Available Diet Types</h4>
+          <p>Every week you can pick from four diet categories. Mix and match across meals as you like.</p>
+          <h4>Our Diet Options</h4>
+          <ul>
+            <li>🌱 Vegan — plant-based, dairy-free</li>
+            <li>🥑 Keto — low-carb, high-fat</li>
+            <li>💪 High-Protein — muscle & recovery</li>
+            <li>🌾 Gluten-Free — wheat & gluten free</li>
+          </ul>
+          <h4>Nutritional Info</h4>
+          <ul>
+            <li>Calorie count on every meal</li>
+            <li>Macro breakdown per serving</li>
+            <li>Allergen labels on all packaging</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CARD 3 — Customisation -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=500&q=80" alt="Customisation"/>
+        <h3>Customise Your Box</h3><br>
+        <p>You pick, we pack.</p>
+        <button onclick="toggleDetails('custom')">Know More</button>
+        <div id="custom" class="details">
+          <h4>How to Customise</h4>
+          <p>Log into your ChefBox dashboard every Thursday to select your meals for the following week. Didn't pick? We auto-select based on your saved preferences.</p>
+          <h4>What You Can Change</h4>
+          <ul>
+            <li>Choose meals from the weekly menu</li>
+            <li>Switch diet type any week</li>
+            <li>Add extra servings (+₹299/meal)</li>
+            <li>Swap ingredients for allergies</li>
+          </ul>
+          <h4>Preferences Saved</h4>
+          <ul>
+            <li>Dietary restrictions</li>
+            <li>Allergies and dislikes</li>
+            <li>Spice level preference</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CARD 4 — Pause & Cancel -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500&q=80" alt="Pause and Cancel"/>
+        <h3>Pause &amp; Cancel</h3><br>
+        <p>No lock-ins, no stress.</p>
+        <button onclick="toggleDetails('pause')">Know More</button>
+        <div id="pause" class="details">
+          <h4>Skipping a Week</h4>
+          <p>Going on holiday or just need a break? Skip any week from your dashboard before Thursday midnight and you won't be charged for that week.</p>
+          <h4>Pausing Your Plan</h4>
+          <ul>
+            <li>Pause for up to 8 weeks at a time</li>
+            <li>Resume whenever you're ready</li>
+            <li>No fees for pausing</li>
+          </ul>
+          <h4>Cancellation</h4>
+          <ul>
+            <li>Cancel anytime from your account</li>
+            <li>No cancellation fees on Weekly plan</li>
+            <li>Monthly & Annual — cancel after current period</li>
+            <li>Email support within 24 hours</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CART PANEL -->
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart" onclick="toggleCart()">✖</button>
+    </div>
+    <ul id="cartItems"></ul>
+    <div class="cart-footer">
+      <button onclick="clearCart()" class="clear-cart">Clear Cart</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3 class="logo">ChefBOX</h3>
+        <p>Delivering fresh ingredients weekly for your culinary adventures.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="products.html">Menu</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Diet Plans</h4>
+        <a href="#">Vegan</a>
+        <a href="#">Keto</a>
+        <a href="#">High-Protein</a>
+        <a href="#">Gluten-Free</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: hello@chefbox.com</p>
+        <p>Location: Mumbai, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ChefBOX | Fresh • Healthy • Delivered</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

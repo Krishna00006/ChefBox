@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>About - ChefBOX</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h2 class="logo-text">Chef<span>Box</span></h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Menu</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="cart" onclick="toggleCart()">
+      🛒 Cart <span id="cartCount" class="cart-count">0</span>
+    </div>
+  </header>
+
+  <!-- WHO WE ARE -->
+  <section class="page">
+
+    <h1>About ChefBox</h1>
+    <p>We believe eating healthy should be simple, affordable and enjoyable — not stressful.</p>
+
+    <div class="card-container">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80" alt="Our Story"/>
+        <h3>Our Story</h3>
+        <p>ChefBox started with a simple frustration — spending hours figuring out what to cook, buying too much, wasting half of it. We built ChefBox to fix that. Every box is planned, portioned and packed so you can cook confidently without the chaos.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&q=80" alt="Fresh Ingredients"/>
+        <h3>What We Do</h3>
+        <p>Every week we curate a rotating menu of fresh, chef-designed meals. You pick your meals, we pre-portion every ingredient and deliver it straight to your door — along with easy step-by-step recipe cards.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&q=80" alt="Healthy Living"/>
+        <h3>Why ChefBox</h3>
+        <p>From busy professionals to fitness enthusiasts to families — ChefBox works for everyone. No meal planning, no grocery runs, no food waste. Just great food, made by you, with everything you need.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- OUR MISSION -->
+  <section class="page">
+
+    <h1>Our Mission</h1>
+    <p>Three things drive everything we do at ChefBox.</p>
+
+    <div class="card-container">
+
+      <div class="card">
+        <div style="font-size: 40px; padding-top: 20px;">🌿</div>
+        <h3>Eat Fresher</h3>
+        <p>We source ingredients locally and pack them within 24 hours of delivery so every meal is as fresh as possible.</p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 40px; padding-top: 20px;">♻️</div>
+        <h3>Waste Less</h3>
+        <p>Pre-portioned ingredients mean you only get exactly what you need. No more throwing away half-used vegetables.</p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 40px; padding-top: 20px;">🍳</div>
+        <h3>Cook More</h3>
+        <p>Our recipe cards are designed for all skill levels — so whether you're a beginner or a seasoned home cook, every meal is achievable.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- THE TEAM -->
+  <section class="page">
+
+    <h1>The Team</h1>
+    <p>A small team of food lovers, nutritionists and logistics nerds building a better way to eat.</p>
+
+    <div class="card-container">
+
+      <div class="card">
+        <img src="#" alt="Founder"/>
+        <h3>Krishna Agrawal</h3>
+        <p>Founder & CEO — nutritionist turned entrepreneur. Krishna built ChefBox after spending years helping people eat better.</p>
+      </div>
+
+      <div class="card">
+        <img src="#" alt="Operations"/>
+        <h3>Rajveer Singh</h3>
+        <p>Head of Operations — Rajveer keeps every box packed, every delivery on time, and every customer happy.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUICK STATS -->
+  <section class="page">
+    <h1>ChefBox in Numbers</h1>
+    <p>We're just getting started — but here's where we are today.</p>
+
+    <div class="card-container">
+      <div class="card">
+        <div style="font-size: 40px; padding-top: 20px;">📦</div>
+        <h3>2,400+</h3>
+        <p>Boxes delivered across India every month.</p>
+      </div>
+      <div class="card">
+        <div style="font-size: 40px; padding-top: 20px;">🍽️</div>
+        <h3>48 Meals</h3>
+        <p>Unique recipes on our rotating weekly menu.</p>
+      </div>
+      <div class="card">
+        <div style="font-size: 40px; padding-top: 20px;">🏙️</div>
+        <h3>6 Cities</h3>
+        <p>Mumbai, Delhi, Bangalore, Pune, Hyderabad, Chennai.</p>
+      </div>
+      <div class="card">
+        <div style="font-size: 40px; padding-top: 20px;">⭐</div>
+        <h3>4.8 / 5</h3>
+        <p>Average customer rating across all plans.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CART PANEL -->
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart" onclick="toggleCart()">✖</button>
+    </div>
+    <ul id="cartItems"></ul>
+    <div class="cart-footer">
+      <button onclick="clearCart()" class="clear-cart">Clear Cart</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3 class="logo">ChefBOX</h3>
+        <p>Delivering fresh ingredients weekly for your culinary adventures.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Menu</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Diet Plans</h4>
+        <a href="#">Vegan</a>
+        <a href="#">Keto</a>
+        <a href="#">High-Protein</a>
+        <a href="#">Gluten-Free</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: hello@chefbox.com</p>
+        <p>Location: Mumbai, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ChefBOX | Fresh • Healthy • Delivered</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
